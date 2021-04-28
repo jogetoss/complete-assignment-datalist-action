@@ -1,6 +1,6 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+This bundle contains Complete Assignment Datalist Action plugin. This plugin enables bulk completion of specific process activity by filling up a single form in a datalist.
 
 # Getting Help
 
