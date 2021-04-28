@@ -4,7 +4,7 @@
     <groupId>org.joget.marketplace</groupId>
     <artifactId>complete_assignment_datalist_action</artifactId>
     <packaging>bundle</packaging>
-    <version>7.0.1</version>
+    <version>7.0-BETA</version>
     <name>complete_assignment_datalist_action</name>
     <url>http://www.joget.org</url>
     <build>
