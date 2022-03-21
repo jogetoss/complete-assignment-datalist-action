@@ -51,7 +51,7 @@ public class CompleteAssignmentDatalistAction extends DataListActionDefault impl
 
     @Override
     public String getVersion() {
-        return "7.0.1";
+        return "7.0.2";
     }
 
     public String getClassName() {
@@ -195,10 +195,11 @@ public class CompleteAssignmentDatalistAction extends DataListActionDefault impl
             
             
             dataModel.put("buttonLabel", StringUtil.escapeString(ResourceBundleUtil.getMessage("form.button.submit"), StringUtil.TYPE_HTML, null));
-            dataModel.put("json", StringUtil.escapeString(getSelectedFormJson(form), StringUtil.TYPE_HTML, null));
+            String json = StringUtil.escapeString(getSelectedFormJson(form), StringUtil.TYPE_HTML, null);
+            dataModel.put("json", json);
             AppDefinition appDef = AppUtil.getCurrentAppDefinition();
             dataModel.put("appDef", AppUtil.getCurrentAppDefinition());
-            String nonceForm = SecurityUtil.generateNonce(new String[]{"EmbedForm", appDef.getAppId(), appDef.getVersion().toString(), getPropertyString("popupFormId")}, 1);
+            String nonceForm = SecurityUtil.generateNonce(new String[]{"EmbedForm", appDef.getAppId(), appDef.getVersion().toString(), json}, 1);
             dataModel.put("nonceForm", nonceForm);
             
             return pluginManager.getPluginFreeMarkerTemplate(dataModel, "org.joget.marketplace.CompleteAssignmentDatalistAction", "/templates/completeAssignmentDatalistActionPopUpForm.ftl", null);
