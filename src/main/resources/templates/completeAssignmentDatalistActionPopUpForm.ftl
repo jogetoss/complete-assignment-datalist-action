@@ -15,7 +15,7 @@
     }
 
     $(function(){
-        $('button[value="${element.properties.id}"]').on("click", function(e){
+        $(document).on("click", 'button[value="${element.properties.id}"]', function(e){
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
